@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZIKI — с любовью в каждом кусочке</title>
+    <!-- Google Fonts for Luxury Editorial Aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        /* ==========================================================
+           ZIKI BRAND DESIGN SYSTEM & STYLES
+           ========================================================== */
+        :root {
+            --bg-dark: #17150F;
+            --color-white: #F8F3EC;
+            --color-cream: #F5EEE5;
+            --warm-beige: #E6BD84;
+            --champagne: #D9AF7A;
+            --dark-brown: #3B2419;
+            --brand-accent: #7a6558;
+            --brand-accent-hover: #655347;
+            --border-gold: rgba(217, 175, 122, 0.55);
+            --header-border: rgba(220, 190, 140, 0.25);
+            --max-width: 1320px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: url('oo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--color-white);
+            overflow-x: hidden;
+            width: 100vw;
+        }
+
+        /* ==========================================================
+           HEADER
+           ========================================================== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 87px;
+            background: rgba(122, 101, 88, 0.05);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border-bottom: 1px solid var(--header-border);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-container {
+            width: 100%;
+            max-width: var(--max-width);
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .header-logo {
+            height: 38px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            color: #ffffff;
+            font-size: 26px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 40px;
+            margin-left: 30px;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: #F5EEE4;
+            font-size: 17px;
+            font-weight: 500;
+            transition: opacity 0.2s ease;
+        }
+
+        .main-nav a:hover {
+            opacity: 0.75;
+        }
+
+        .cart-btn {
+            width: 157px;
+            height: 48px;
+            background: rgba(23, 21, 15, 0.2);
+            border: 1px solid var(--warm-beige);
+            border-radius: 25px;
+            color: #F5EEE4;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15.5px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .cart-btn:hover {
+            background: rgba(230, 189, 132, 0.2);
+        }
+
+        /* ==========================================================
+           TOAST NOTIFICATION
+           ========================================================== */
+        .toast-notification {
+            position: fixed;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-20px);
+            background: var(--brand-accent);
+            color: #F8F3EC;
+            border: 2px solid var(--warm-beige);
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            pointer-events: none;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .toast-notification.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ==========================================================
+           HERO SECTION
+           ========================================================== */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 620px;
+            margin-top: 87px;
+            background: url('https://images.unsplash.com/photo-1535141192574-5d4897c13136?auto=format&fit=crop&w=1717&q=80') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 150px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 900px;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 88px;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            color: #FFFFFF;
+            line-height: 1;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .dash {
+            font-weight: 300;
+        }
+
+        .script-subtitle {
+            font-family: 'Great Vibes', cursive;
+            font-size: 62px;
+            font-weight: 400;
+            color: #EBD0A8;
+            transform: translateY(-4px);
+        }
+
+        .hero-heart {
+            width: 48px;
+            height: 48px;
+            color: #FFFFFF;
+            stroke-width: 1.5;
+            margin-left: 4px;
+            transform: translateY(8px);
+        }
+
+        .hero-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 43px;
+            font-weight: 400;
+            color: #FFFFFF;
+            margin-top: -6px;
+        }
+
+        .hero-description {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 17px;
+            line-height: 29px;
+            color: #F8F3EC;
+            margin-top: 18px;
+            font-weight: 400;
+        }
+
+        .cta-btn {
+            margin-top: 36px;
+            width: 285px;
+            height: 58px;
+            background: #E6BD84;
+            border: none;
+            border-radius: 30px;
+            color: var(--dark-brown);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16.5px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            transition: background 0.2s ease, transform 0.1s ease;
+        }
+
+        .cta-btn:hover {
+            background: #f1c992;
+        }
+
+        .hero-transition {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            line-height: 0;
+            z-index: 3;
+        }
+
+        .hero-transition svg {
+            width: 100%;
+            height: 45px;
+            display: block;
+        }
+
+        /* ==========================================================
+           PRODUCT SECTION
+           ========================================================== */
+        .product-section {
+            background-color: #F5EEE5;
+            color: var(--dark-brown);
+            padding: 30px 0 65px 0;
+            position: relative;
+            z-index: 4;
+        }
+
+        .product-container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .product-header-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .small-heart-icon {
+            margin-bottom: 6px;
+        }
+
+        .product-pre-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #3C241A;
+            margin-bottom: 8px;
+        }
+
+        .heading-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .product-main-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 44px;
+            font-weight: 700;
+            color: #3C241A;
+        }
+
+        .botanical-ornament {
+            opacity: 0.7;
+        }
+
+        /* ==========================================================
+           PRODUCT CARDS
+           ========================================================== */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 27px;
+            width: 100%;
+        }
+
+        .product-card {
+            background: #F8F3EC;
+            border: 1px solid rgba(217, 175, 122, 0.35);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(59, 36, 25, 0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(59, 36, 25, 0.08);
+        }
+
+        .card-image-wrap {
+            width: 100%;
+            height: 220px;
+            background-color: #ebdcd0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .card-img {
+            transform: scale(1.03);
+        }
+
+        .card-content {
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark-brown);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .card-desc {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13.5px;
+            line-height: 21px;
+            color: var(--dark-brown);
+            opacity: 0.85;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+            padding-top: 4px;
+        }
+
+        .card-price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark-brown);
+        }
+
+        .buy-btn {
+            background-color: var(--brand-accent);
+            color: #F8F3EC;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 18px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13.5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.1s ease;
+        }
+
+        .buy-btn:hover {
+            background-color: var(--brand-accent-hover);
+        }
+
+        /* ==========================================================
+           MODAL CART
+           ========================================================== */
+        .cart-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.25s ease, visibility 0.25s ease;
+        }
+
+        .cart-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cart-modal {
+            background: #FBF8F3;
+            color: #3B2419;
+            width: 100%;
+            max-width: 660px;
+            border-radius: 20px;
+            padding: 32px 36px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+            position: relative;
+            transform: translateY(15px);
+            transition: transform 0.25s ease;
+        }
+
+        .cart-modal-overlay.active .cart-modal {
+            transform: translateY(0);
+        }
+
+        .cart-modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 22px;
+        }
+
+        .cart-modal-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: #2D2018;
+        }
+
+        .cart-close-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #444;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s;
+        }
+
+        .cart-close-btn:hover {
+            color: #000;
+        }
+
+        .cart-items-list {
+            max-height: 220px;
+            overflow-y: auto;
+            margin-bottom: 12px;
+        }
+
+        .cart-item-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0;
+            border-bottom: 1px solid #EADCCF;
+        }
+
+        .cart-item-info {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .cart-item-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: #2D2018;
+        }
+
+        .cart-item-price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            color: #7A6B5D;
+            font-weight: 500;
+        }
+
+        .cart-item-controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .quantity-changer {
+            display: flex;
+            align-items: center;
+            background: #EFE7DE;
+            border-radius: 20px;
+            padding: 5px 12px;
+            gap: 14px;
+        }
+
+        .qty-btn {
+            background: none;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            color: #3B2419;
+            font-weight: 600;
+        }
+
+        .qty-value {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: #3B2419;
+        }
+
+        .cart-item-remove {
+            background: none;
+            border: none;
+            color: #D36A63;
+            font-size: 18px;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .cart-item-remove:hover {
+            opacity: 1;
+        }
+
+        .cart-empty-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            color: #7A6B5D;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .cart-total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 30px;
+            font-weight: 600;
+            color: #2D2018;
+            margin: 18px 0 16px 0;
+            padding-top: 4px;
+        }
+
+        .cart-total-price {
+            color: #2D2018;
+            font-weight: 700;
+        }
+
+        /* Recommendation Section in Cart */
+        .cart-recommendations-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #3B2419;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .cart-recommendations-container {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            margin-bottom: 22px;
+            scrollbar-width: thin;
+            scrollbar-color: #D9AF7A #F5EEE5;
+        }
+
+        .cart-recommendations-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .cart-recommendations-container::-webkit-scrollbar-thumb {
+            background: #D9AF7A;
+            border-radius: 3px;
+        }
+
+        .rec-card {
+            min-width: 130px;
+            width: 130px;
+            background: #FFFFFF;
+            border: 1px solid rgba(217, 175, 122, 0.35);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+        }
+
+        .rec-img-wrap {
+            width: 100%;
+            height: 90px;
+            background: #ebdcd0;
+        }
+
+        .rec-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .rec-info {
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .rec-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11.5px;
+            font-weight: 600;
+            color: #3B2419;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 2px;
+        }
+
+        .rec-price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            color: #7A6B5D;
+            margin-bottom: 6px;
+        }
+
+        .rec-add-btn {
+            background-color: #E6BD84;
+            color: #3B2419;
+            border: none;
+            border-radius: 6px;
+            padding: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            margin-top: auto;
+            transition: background 0.2s;
+        }
+
+        .rec-add-btn:hover {
+            background-color: #d8af73;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            background: #3B2419;
+            color: #F8F3EC;
+            border: none;
+            border-radius: 14px;
+            padding: 16px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(59, 36, 25, 0.2);
+            transition: background 0.2s;
+        }
+
+        .checkout-btn:hover {
+            background: #2D1A12;
+        }
+
+        /* ==========================================================
+           CHECKOUT MODAL (Оформление заказа по вашему дизайну)
+           ========================================================== */
+        .checkout-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(4px);
+            z-index: 2500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.25s ease, visibility 0.25s ease;
+        }
+
+        .checkout-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .checkout-modal {
+            background: #FFFFFF;
+            color: #3B2419;
+            width: 100%;
+            max-width: 520px;
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            position: relative;
+            transform: translateY(15px);
+            transition: transform 0.25s ease;
+        }
+
+        .checkout-modal-overlay.active .checkout-modal {
+            transform: translateY(0);
+        }
+
+        .checkout-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+
+        .checkout-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 34px;
+            font-weight: 700;
+            color: #2D2018;
+        }
+
+        .checkout-close-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #888;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s;
+        }
+
+        .checkout-close-btn:hover {
+            color: #000;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-label {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: #3B2419;
+            margin-bottom: 8px;
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 14px 16px;
+            background: #FFFFFF;
+            border: 1px solid #D9CBBE;
+            border-radius: 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            color: #3B2419;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            border-color: #3B2419;
+        }
+
+        .form-input::placeholder, .form-textarea::placeholder {
+            color: #9A8C80;
+        }
+
+        .form-hint {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            color: #7A6B5D;
+            margin-top: 6px;
+        }
+
+        .submit-whatsapp-btn {
+            width: 100%;
+            background: #3B2419;
+            color: #F8F3EC;
+            border: none;
+            border-radius: 16px;
+            padding: 18px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16.5px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(59, 36, 25, 0.2);
+            transition: background 0.2s;
+        }
+
+        .submit-whatsapp-btn:hover {
+            background: #2D1A12;
+        }
+
+        /* ==========================================================
+           FOOTER
+           ========================================================== */
+        .site-footer {
+            background-color: #7a6558;
+            color: rgba(248, 243, 236, 0.9);
+            padding: 35px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(220, 190, 140, 0.25);
+            position: relative;
+            z-index: 4;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13.5px;
+            line-height: 22px;
+        }
+
+        .site-footer p:first-child {
+            margin-bottom: 6px;
+            color: #F8F3EC;
+        }
+
+        .site-footer a {
+            color: var(--warm-beige);
+            text-decoration: none;
+        }
+
+        @media (max-width: 900px) {
+            .site-header { height: 75px; }
+            .hero-section { margin-top: 75px; }
+            .main-nav { display: none; }
+            .cards-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+            .hero-title { font-size: 52px; flex-direction: column; gap: 0; }
+            .script-subtitle { transform: translateY(0); }
+            .cart-modal, .checkout-modal { max-width: 94%; padding: 22px 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ВСПЛЫВАЮЩЕЕ УВЕДОМЛЕНИЕ -->
+    <div class="toast-notification" id="toastNotification">🛒 Уведомление</div>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <img src="Ziki-round.png" alt="Ziki Logo" class="header-logo">
+                <span class="logo-text">Ziki</span>
+            </a>
+
+            <nav class="main-nav">
+                <a href="about.html">Наш путь</a>
+                <a href="#menu">Меню</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+
+            <button class="cart-btn" id="cartButton">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span id="cartCountHeader">Корзина (0)</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                ZIKI <span class="dash">—</span>
+                <span class="script-subtitle">с любовью</span>
+                <svg class="hero-heart" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+            </h1>
+            <h2 class="hero-tagline">в каждом кусочке</h2>
+            <p class="hero-description">
+                Свежие сэндвичи, нежные трайфлы<br>
+                и домашние торты каждый день.
+            </p>
+            <button class="cta-btn" id="orderButton">Заказать сейчас &nbsp;&nbsp;&rarr;</button>
+        </div>
+
+        <div class="hero-transition">
+            <svg viewBox="0 0 1717 85" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,25 C150,75 350,5 600,45 C850,85 1100,10 1350,50 C1550,80 1650,20 1717,35 L1717,85 L0,85 Z" fill="#F5EEE5"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- PRODUCT SECTION -->
+    <section class="product-section" id="menu">
+        <div class="product-container">
+            <div class="product-header-wrap">
+                <div class="small-heart-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#D9AF7A" stroke="none">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </div>
+                <span class="product-pre-title">ВКУС, КОТОРЫЙ ХОЧЕТСЯ ПОВТОРИТЬ</span>
+                <div class="heading-row">
+                    <svg class="botanical-ornament left" width="60" height="24" viewBox="0 0 60 24" fill="none" stroke="#D9AF7A" stroke-width="1.2">
+                        <path d="M2 12C15 12 25 4 35 12C25 20 15 12 2 12Z" />
+                        <path d="M30 12C40 12 48 6 56 12C48 18 40 12 30 12Z" />
+                        <circle cx="58" cy="12" r="1.5" fill="#D9AF7A"/>
+                    </svg>
+                    <h2 class="product-main-title">Наша продукция</h2>
+                    <svg class="botanical-ornament right" width="60" height="24" viewBox="0 0 60 24" fill="none" stroke="#D9AF7A" stroke-width="1.2">
+                        <path d="M58 12C45 12 35 20 25 12C35 4 45 12 58 12Z" />
+                        <path d="M30 12C20 12 12 18 4 12C12 6 20 12 30 12Z" />
+                        <circle cx="2" cy="12" r="1.5" fill="#D9AF7A"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="cards-grid">
+                <!-- Карточка 1 -->
+                <article class="product-card">
+                    <div class="card-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=500&q=80" alt="Сэндвич «Классический»" class="card-img">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Сэндвич «Классический»</h3>
+                        <p class="card-desc">Свежий сочный сэндвич с нежным куриным филе, сыром и фирменным соусом.</p>
+                        <div class="card-footer">
+                            <span class="card-price">180 сом</span>
+                            <button class="buy-btn" data-name="Сэндвич «Классический»" data-price="180" data-img="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=500&q=80">В корзину</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Карточка 2 -->
+                <article class="product-card">
+                    <div class="card-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1550507992-eb63ffee0847?auto=format&fit=crop&w=500&q=80" alt="Сэндвич с тунцом" class="card-img">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Сэндвич с тунцом</h3>
+                        <p class="card-desc">Изысканное сочетание тунца, свежих овощей и зелени на мягком хлебе.</p>
+                        <div class="card-footer">
+                            <span class="card-price">210 сом</span>
+                            <button class="buy-btn" data-name="Сэндвич с тунцом" data-price="210" data-img="https://images.unsplash.com/photo-1550507992-eb63ffee0847?auto=format&fit=crop&w=500&q=80">В корзину</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Карточка 3 -->
+                <article class="product-card">
+                    <div class="card-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=500&q=80" alt="Трайфл «Шоколадный»" class="card-img">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Трайфл «Шоколадный»</h3>
+                        <p class="card-desc">Нежный десерт в стаканчике с шоколадным бисквитом и крем-чизом.</p>
+                        <div class="card-footer">
+                            <span class="card-price">160 сом</span>
+                            <button class="buy-btn" data-name="Трайфл «Шоколадный»" data-price="160" data-img="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=500&q=80">В корзину</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Карточка 4 -->
+                <article class="product-card">
+                    <div class="card-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=500&q=80" alt="Сэндвич «Фирменный»" class="card-img">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Сэндвич «Фирменный»</h3>
+                        <p class="card-desc">Особый рецепт от шефа с отборным мясом, специями и хрустящей корочкой.</p>
+                        <div class="card-footer">
+                            <span class="card-price">230 сом</span>
+                            <button class="buy-btn" data-name="Сэндвич «Фирменный»" data-price="230" data-img="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=500&q=80">В корзину</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Карточка 5 -->
+                <article class="product-card">
+                    <div class="card-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=500&q=80" alt="Трайфл «Клубничный»" class="card-img">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Трайфл «Клубничный»</h3>
+                        <p class="card-desc">Легкий и воздушный десерт со свежей клубникой и сливочным кремом.</p>
+                        <div class="card-footer">
+                            <span class="card-price">175 сом</span>
+                            <button class="buy-btn" data-name="Трайфл «Клубничный»" data-price="175" data-img="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=500&q=80">В корзину</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Карточка 6 -->
+                <article class="product-card">
+                    <div class="card-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=500&q=80" alt="Торт «Восточный вкус»" class="card-img">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Торт «Восточный вкус»</h3>
+                        <p class="card-desc">Фирменный праздничный торт по секретному рецепту нашей кондитерской.</p>
+                        <div class="card-footer">
+                            <span class="card-price">1200 сом</span>
+                            <button class="buy-btn" data-name="Торт «Восточный вкус»" data-price="1200" data-img="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=500&q=80">В корзину</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL CART -->
+    <div class="cart-modal-overlay" id="cartModalOverlay">
+        <div class="cart-modal">
+            <div class="cart-modal-header">
+                <h3 class="cart-modal-title">Ваша корзина</h3>
+                <button class="cart-close-btn" id="cartCloseBtn">&times;</button>
+            </div>
+            
+            <div class="cart-items-list" id="cartItemsList">
+                <div class="cart-empty-text">Корзина пуста</div>
+            </div>
+
+            <div class="cart-total-row">
+                <span>Итого:</span>
+                <span class="cart-total-price" id="cartTotalPrice">0 сом</span>
+            </div>
+
+            <div class="cart-recommendations-title">♥ Добавьте к заказу из меню:</div>
+            <div class="cart-recommendations-container" id="cartRecommendationsContainer">
+                <!-- Рекомендация 1 -->
+                <div class="rec-card">
+                    <div class="rec-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=300&q=80" alt="Сэндвич «Классический»" class="rec-img">
+                    </div>
+                    <div class="rec-info">
+                        <div class="rec-name">Сэндвич «Класс...</div>
+                        <div class="rec-price">180 сом</div>
+                        <button class="rec-add-btn" onclick="addToCart('Сэндвич «Классический»', 180, 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=300&q=80')">+ Добавить</button>
+                    </div>
+                </div>
+                <!-- Рекомендация 2 -->
+                <div class="rec-card">
+                    <div class="rec-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1550507992-eb63ffee0847?auto=format&fit=crop&w=300&q=80" alt="Сэндвич с тунцом" class="rec-img">
+                    </div>
+                    <div class="rec-info">
+                        <div class="rec-name">Сэндвич с тун...</div>
+                        <div class="rec-price">210 сом</div>
+                        <button class="rec-add-btn" onclick="addToCart('Сэндвич с тунцом', 210, 'https://images.unsplash.com/photo-1550507992-eb63ffee0847?auto=format&fit=crop&w=300&q=80')">+ Добавить</button>
+                    </div>
+                </div>
+                <!-- Рекомендация 3 -->
+                <div class="rec-card">
+                    <div class="rec-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=300&q=80" alt="Трайфл «Шоколадный»" class="rec-img">
+                    </div>
+                    <div class="rec-info">
+                        <div class="rec-name">Трайфл «Шок...</div>
+                        <div class="rec-price">160 сом</div>
+                        <button class="rec-add-btn" onclick="addToCart('Трайфл «Шоколадный»', 160, 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=300&q=80')">+ Добавить</button>
+                    </div>
+                </div>
+                <!-- Рекомендация 4 -->
+                <div class="rec-card">
+                    <div class="rec-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=300&q=80" alt="Сэндвич «Фирменный»" class="rec-img">
+                    </div>
+                    <div class="rec-info">
+                        <div class="rec-name">Сэндвич «Фир...</div>
+                        <div class="rec-price">230 сом</div>
+                        <button class="rec-add-btn" onclick="addToCart('Сэндвич «Фирменный»', 230, 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=300&q=80')">+ Добавить</button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="checkout-btn" id="checkoutBtn">Оформить заказ в WhatsApp</button>
+        </div>
+    </div>
+
+    <!-- MODAL CHECKOUT (Оформление заказа с полями) -->
+    <div class="checkout-modal-overlay" id="checkoutModalOverlay">
+        <div class="checkout-modal">
+            <div class="checkout-header">
+                <h3 class="checkout-title">Оформление заказа</h3>
+                <button class="checkout-close-btn" id="checkoutCloseBtn">&times;</button>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label" for="clientName">Ваше имя</label>
+                <input type="text" class="form-input" id="clientName" placeholder="Например, Айбек">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="clientPhone">Номер телефона (Кыргызстан)</label>
+                <input type="text" class="form-input" id="clientPhone" value="+996" maxlength="13">
+                <div class="form-hint">Формат: +996 и ровно 9 цифр номера</div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="deliveryMethod">Способ получения</label>
+                <select class="form-select" id="deliveryMethod">
+                    <option value="" disabled selected>Выберите способ получения</option>
+                    <option value="Доставка курьером">Доставка курьером</option>
+                    <option value="Самовывоз">Самовывоз</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="clientAddress">Адрес доставки / комментарий</label>
+                <textarea class="form-textarea" id="clientAddress" rows="3" placeholder="Улица, дом, квартира или ориентир"></textarea>
+            </div>
+
+            <button class="submit-whatsapp-btn" id="submitWhatsappBtn">Отправить заказ в WhatsApp</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" id="contacts">
+        <p>Кондитерская "Ziki" &copy; 2026. Сэндвичи &bull; торты &bull; десерты</p>
+        <p>Телефон / WhatsApp: <a href="https://wa.me/996707030150" target="_blank">+996 (707) 03-01-50</a></p>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        const cartButton = document.getElementById('cartButton');
+        const cartModalOverlay = document.getElementById('cartModalOverlay');
+        const cartCloseBtn = document.getElementById('cartCloseBtn');
+        const cartItemsList = document.getElementById('cartItemsList');
+        const cartTotalPrice = document.getElementById('cartTotalPrice');
+        const cartCountHeader = document.getElementById('cartCountHeader');
+        const toastNotification = document.getElementById('toastNotification');
+        const orderButton = document.getElementById('orderButton');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+
+        const checkoutModalOverlay = document.getElementById('checkoutModalOverlay');
+        const checkoutCloseBtn = document.getElementById('checkoutCloseBtn');
+        const submitWhatsappBtn = document.getElementById('submitWhatsappBtn');
+        const clientPhoneInput = document.getElementById('clientPhone');
+
+        let cart = [];
+
+        function showToast(message) {
+            toastNotification.textContent = message;
+            toastNotification.classList.add('show');
+            setTimeout(() => {
+                toastNotification.classList.remove('show');
+            }, 2500);
+        }
+
+        // Контроль ввода телефона: обязательный префикс +996 и не более 9 цифр после него
+        clientPhoneInput.addEventListener('input', (e) => {
+            let val = clientPhoneInput.value;
+            if (!val.startsWith('+996')) {
+                clientPhoneInput.value = '+996';
+                return;
+            }
+            // Оставляем только цифры, следим чтобы их было не больше 12 символов всего (+996 и 9 цифр)
+            let digits = val.replace(/\D/g, '');
+            if (digits.length > 12) {
+                digits = digits.slice(0, 12);
+            }
+            clientPhoneInput.value = '+' + digits;
+        });
+
+        clientPhoneInput.addEventListener('keydown', (e) => {
+            if (clientPhoneInput.selectionStart <= 4 && (e.key === 'Backspace' || e.key === 'Delete')) {
+                e.preventDefault();
+            }
+        });
+
+        function updateCartUI() {
+            cartItemsList.innerHTML = '';
+            if (cart.length === 0) {
+                cartItemsList.innerHTML = '<div class="cart-empty-text">Корзина пуста</div>';
+                cartTotalPrice.textContent = '0 сом';
+                cartCountHeader.textContent = 'Корзина (0)';
+                return;
+            }
+
+            let totalSum = 0;
+            let totalCount = 0;
+
+            cart.forEach((item, index) => {
+                totalSum += item.price * item.quantity;
+                totalCount += item.quantity;
+
+                const row = document.createElement('div');
+                row.className = 'cart-item-row';
+                row.innerHTML = `
+                    <div class="cart-item-info">
+                        <span class="cart-item-name">${item.name}</span>
+                        <span class="cart-item-price">${item.price} сом</span>
+                    </div>
+                    <div class="cart-item-controls">
+                        <div class="quantity-changer">
+                            <button class="qty-btn" onclick="changeQty(${index}, -1)">-</button>
+                            <span class="qty-value">${item.quantity}</span>
+                            <button class="qty-btn" onclick="changeQty(${index}, 1)">+</button>
+                        </div>
+                        <button class="cart-item-remove" onclick="removeItem(${index})">&times;</button>
+                    </div>
+                `;
+                cartItemsList.appendChild(row);
+            });
+
+            cartTotalPrice.textContent = totalSum + ' сом';
+            cartCountHeader.textContent = `Корзина (${totalCount})`;
+        }
+
+        window.addToCart = function(name, price, img) {
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ name, price: Number(price), quantity: 1, img });
+            }
+            updateCartUI();
+            showToast(`Добавлено в корзину: ${name}`);
+        };
+
+        window.changeQty = function(index, delta) {
+            cart[index].quantity += delta;
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+            updateCartUI();
+        };
+
+        window.removeItem = function(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        };
+
+        document.querySelectorAll('.buy-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const name = button.getAttribute('data-name');
+                const price = button.getAttribute('data-price');
+                const img = button.getAttribute('data-img');
+                addToCart(name, price, img);
+            });
+        });
+
+        cartButton.addEventListener('click', () => {
+            cartModalOverlay.classList.add('active');
+        });
+
+        cartCloseBtn.addEventListener('click', () => {
+            cartModalOverlay.classList.remove('active');
+        });
+
+        cartModalOverlay.addEventListener('click', (e) => {
+            if (e.target === cartModalOverlay) {
+                cartModalOverlay.classList.remove('active');
+            }
+        });
+
+        orderButton.addEventListener('click', () => {
+            document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Открытие окна оформления заказа из корзины
+        checkoutBtn.addEventListener('click', () => {
+            if (cart.length === 0) {
+                showToast('Ваша корзина пуста!');
+                return;
+            }
+            cartModalOverlay.classList.remove('active');
+            checkoutModalOverlay.classList.add('active');
+        });
+
+        checkoutCloseBtn.addEventListener('click', () => {
+            checkoutModalOverlay.classList.remove('active');
+        });
+
+        checkoutModalOverlay.addEventListener('click', (e) => {
+            if (e.target === checkoutModalOverlay) {
+                checkoutModalOverlay.classList.remove('active');
+            }
+        });
+
+        // Отправка заказа в WhatsApp с проверкой номера
+        submitWhatsappBtn.addEventListener('click', () => {
+            const name = document.getElementById('clientName').value.trim();
+            const phone = clientPhoneInput.value.trim();
+            const delivery = document.getElementById('deliveryMethod').value;
+            const address = document.getElementById('clientAddress').value.trim();
+
+            if (!name) {
+                showToast('Пожалуйста, введите ваше имя');
+                return;
+            }
+            // Проверка: должен быть строго формат +996 и ровно 9 цифр после (+996XXYYYYYYY -> длина 13 символов)
+            if (phone.length !== 13 || !phone.startsWith('+996')) {
+                showToast('Введите корректный номер: +996 и 9 цифр');
+                return;
+            }
+            if (!delivery) {
+                showToast('Пожалуйста, выберите способ получения');
+                return;
+            }
+
+            let message = `Здравствуйте! Новый заказ в Ziki:\n\n`;
+            message += `👤 Имя: ${name}\n`;
+            message += `📞 Телефон: ${phone}\n`;
+            message += `📦 Способ: ${delivery}\n`;
+            if (address) {
+                message += `📍 Адрес / Комментарий: ${address}\n`;
+            }
+            message += `\nСостав заказа:\n`;
+
+            let totalSum = 0;
+            cart.forEach(item => {
+                message += `- ${item.name} (${item.quantity} шт.) — ${item.price * item.quantity} сом\n`;
+                totalSum += item.price * item.quantity;
+            });
+            message += `\n💰 Итого к оплате: ${totalSum} сом`;
+            
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/996707030150?text=${encodedMessage}`, '_blank');
+        });
+    </script>
+</body>
+</html>
